@@ -1,0 +1,4 @@
+SELECT * FROM asignatura;
+SELECT per.nombre, per.apellido1, per.apellido2,YEAR(CURDATE())-YEAR(per.fecha_nacimiento), per.fecha_nacimiento as edad
+FROM persona AS per INNER JOIN profesor AS prof ON per.id = prof.id_profesor  
+WHERE YEAR(CURDATE())-YEAR(per.fecha_nacimiento) > 40;
